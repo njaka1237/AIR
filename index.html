@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AIRLINK – Les aires protégées du Sud de Madagascar</title>
+  <meta name="description" content="Toutes les aires protégées du Sud de Madagascar : Isalo, Zombitse-Vohibasia, Tsimanampetsotsa, Andohahela… faune, flore, activités, accès et conseils.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav" id="top">
+  <a href="#top" class="logo">AIR<span>LINK</span></a>
+  <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+  <nav id="menu" aria-label="Navigation principale">
+    <a href="#sud">Le Sud</a>
+    <a href="#explorer">Explorer</a>
+    <a href="#carte">Carte</a>
+    <a href="#pourquoi">Pourquoi AIRLINK</a>
+    <a href="#regions">Autres régions</a>
+    <a href="#sources">Sources</a>
+    <button class="theme" id="theme" aria-label="Changer de thème">🌙</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <p class="tag">Guide d'information · Région Sud</p>
+    <h1>Les aires protégées du <em>Sud</em> de Madagascar</h1>
+    <p class="lead">Faune, flore, activités, accès et conseils : toutes les infos sur chaque parc et réserve, au même endroit.</p>
+    <form class="hero-search" id="heroSearch" role="search">
+      <input type="search" id="heroInput" placeholder="Rechercher un parc, un animal, une activité… (ex. lémurien, canyon)" aria-label="Rechercher">
+      <button type="submit">Rechercher</button>
+    </form>
+    <div class="hero-stats" id="heroStats"></div>
+  </div>
+</section>
+
+<main>
+
+  <section id="sud" class="section">
+    <h2>Le Sud en bref</h2>
+    <p class="sub">Des canyons de grès aux forêts épineuses, des lacs salés aux forêts humides : le Sud réunit des paysages et des espèces uniques.</p>
+    <div class="eco" id="eco"></div>
+    <p class="note">Madagascar abrite environ 5 % des espèces animales et végétales du monde et compte 146 aires protégées sur environ 8,88 millions d'hectares.
+      Acteurs : Madagascar National Parks (MNP), ONG et associations, communautés locales.
+      Source : <a href="https://www.ong-madagascar.org/" target="_blank" rel="noopener">ong-madagascar.org</a></p>
+  </section>
+
+  <section id="explorer" class="section alt">
+    <h2>Explorer les aires protégées du Sud</h2>
+    <p class="sub">Filtrez, comparez et ouvrez une fiche pour tout savoir sur un site.</p>
+
+    <div class="toolbar">
+      <input type="search" id="q" placeholder="Rechercher…" aria-label="Rechercher une aire protégée">
+      <select id="sort" aria-label="Trier">
+        <option value="name">Nom (A–Z)</option>
+        <option value="area-desc">Plus grande superficie</option>
+        <option value="area-asc">Plus petite superficie</option>
+        <option value="created">Plus ancienne</option>
+      </select>
+    </div>
+    <div class="filter-row"><span>Type</span><div id="fType" class="chips"></div></div>
+    <div class="filter-row"><span>Région</span><div id="fRegion" class="chips"></div></div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <div class="grid" id="parks"></div>
+    <div class="empty" id="empty" hidden>Aucun résultat. Essayez un autre mot-clé ou réinitialisez les filtres.</div>
+  </section>
+
+  <section id="carte" class="section">
+    <h2>Où se trouvent-elles ?</h2>
+    <p class="sub">Carte schématique du Sud (positions approximatives). Cliquez sur un repère pour ouvrir la fiche.</p>
+    <div class="map-wrap">
+      <svg id="map" viewBox="0 0 400 330" role="img" aria-label="Carte schématique du Sud de Madagascar"></svg>
+      <ul class="legend" id="legend"></ul>
+    </div>
+  </section>
+
+  <section class="section alt" id="comment">
+    <h2>Comment ça marche</h2>
+    <ol class="steps">
+      <li><span>1</span><h3>Choisir la région</h3><p>Commencez par le Sud, d'autres régions suivront.</p></li>
+      <li><span>2</span><h3>Choisir l'aire protégée</h3><p>Parcs nationaux et réserves, avec leurs caractéristiques.</p></li>
+      <li><span>3</span><h3>Lire la fiche</h3><p>Faune, flore, activités, accès, meilleure période, conseils.</p></li>
+      <li><span>4</span><h3>Comparer</h3><p>Mettez jusqu'à 3 sites côte à côte.</p></li>
+    </ol>
+  </section>
+
+  <section id="pourquoi" class="section">
+    <h2>Pourquoi AIRLINK ?</h2>
+    <div class="why">
+      <div>🌿<h3>Sensibilisation</h3><p>Connaissance de la biodiversité de Madagascar à travers les aires protégées.</p></div>
+      <div>💡<h3>Technologie simple</h3><p>Une plateforme accessible à tous.</p></div>
+      <div>🧳<h3>Tourisme</h3><p>Encourager la découverte des sites.</p></div>
+      <div>🏛️<h3>Bonne gouvernance</h3><p>Des données claires pour mieux gérer.</p></div>
+      <div>📊<h3>Transparence</h3><p>Connaissance des revenus produits par les aires protégées.</p></div>
+    </div>
+  </section>
+
+  <section id="regions" class="section alt">
+    <h2>Les autres régions arrivent</h2>
+    <p class="sub">Le Sud est la première région détaillée. Les suivantes seront ajoutées de la même façon.</p>
+    <div class="zones">
+      <div class="zone active"><b>Sud</b><span>Disponible · <span id="zoneCount"></span> aires protégées</span></div>
+      <div class="zone-others" id="zones"></div>
+    </div>
+  </section>
+
+</main>
+
+<section id="sources" class="section sources">
+  <h2>Sources</h2>
+  <p class="sub">Les données proviennent des pages suivantes. Elles peuvent évoluer : à vérifier auprès de Madagascar National Parks avant un voyage.</p>
+  <ul id="sourceList"></ul>
+</section>
+
+<footer>
+  <p><b>AIRLINK</b> · Connecter pour mieux protéger.</p>
+  <p>Mahavelo bevata 🌍</p>
+</footer>
+
+<!-- Barre de comparaison -->
+<div class="cmpbar" id="cmpbar" hidden>
+  <span id="cmpText"></span>
+  <button class="btn small" id="cmpOpen">Comparer</button>
+  <button class="btn small ghost" id="cmpClear">Vider</button>
+</div>
+
+<!-- Fiche détaillée -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle" hidden>
+  <div class="sheet" id="sheet" tabindex="-1">
+    <button class="close" id="mClose" aria-label="Fermer">✕</button>
+    <div id="mBody"></div>
+  </div>
+</div>
+
+<!-- Comparateur -->
+<div class="modal" id="cmpModal" role="dialog" aria-modal="true" aria-labelledby="cmpTitle" hidden>
+  <div class="sheet wide" tabindex="-1">
+    <button class="close" id="cmpClose" aria-label="Fermer">✕</button>
+    <h2 id="cmpTitle">Comparer les aires protégées</h2>
+    <div class="table-wrap" id="cmpTable"></div>
+  </div>
+</div>
+
+<button id="up" aria-label="Retour en haut">↑</button>
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
